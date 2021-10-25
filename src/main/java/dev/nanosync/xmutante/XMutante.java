@@ -1,5 +1,7 @@
 package dev.nanosync.xmutante;
 
+import dev.nanosync.xmutante.command.XMutantUserCommand;
+import dev.nanosync.xmutante.command.XMutanteAdminCommand;
 import dev.nanosync.xmutante.events.XMenuCancelEvent;
 import dev.nanosync.xmutante.custom.XMenuGlowEnchant;
 import dev.nanosync.xmutante.events.XMenuPowersEvent;
@@ -16,18 +18,25 @@ public final class XMutante extends JavaPlugin {
     @Override
     public void onEnable() {
         registerGlow();
-
-        getCommand("mutant").setExecutor(new XPlayer());
+        saveDefaultConfig();
+        getCommand("mutante").setExecutor(new XMutantUserCommand());
+        getCommand("setmutante").setExecutor(new XMutanteAdminCommand());
 
         PluginManager pm = Bukkit.getPluginManager();
 
         pm.registerEvents(new XMenuCancelEvent(), this);
         pm.registerEvents(new XMenuPowersEvent(), this);
+
+        pm.registerEvents(new XPlayer(), this);
+
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+    }
+
+    public static XMutante getInstance(){
+        return getPlugin(XMutante.class);
     }
 
     public void registerGlow() {
