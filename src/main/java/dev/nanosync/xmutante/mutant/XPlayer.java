@@ -50,6 +50,8 @@ public class XPlayer implements Listener {
 
     @EventHandler
     public void onPlayerLeft(PlayerQuitEvent event) {
+        if (XMutante.getInstance().getConfig().getString("Mutante").equals("Nenhum")) return;
+
         if (getMutant().getPlayer().equals(event.getPlayer())) {
             XPowers xPowers = new XPowers(getMutant());
             xPowers.disableAll();
@@ -58,6 +60,8 @@ public class XPlayer implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
+        if (XMutante.getInstance().getConfig().getString("Mutante").equals("Nenhum")) return;
+
         if (getMutant().getPlayer().equals(event.getPlayer())) {
             XPowers xPowers = new XPowers(getMutant());
             xPowers.disableAll();
