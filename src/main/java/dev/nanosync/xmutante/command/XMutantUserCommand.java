@@ -17,7 +17,7 @@ public class XMutantUserCommand implements CommandExecutor {
             return true;
         }
 
-        if (XMutante.getInstance().getConfig().getString("Mutant").equals(sender.getName())){
+        if (XMutante.getInstance().getConfig().getString("Mutante").equals(sender.getName())){
             new XMenu((Player) sender).openMenu();
         } else {
             sender.sendMessage(MessageUtil.youNotMutantCommand);

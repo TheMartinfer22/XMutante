@@ -19,13 +19,13 @@ public class XMutanteAdminCommand implements CommandExecutor {
 
         if (args.length < 1){
             new XPlayer().randomMutant();
-            sender.sendMessage(MessageUtil.prefix + "O jogador escolhido foi " + XMutante.getInstance().getConfig().getString("Mutant") + "!");
+            sender.sendMessage(MessageUtil.prefix + "O jogador escolhido foi " + XMutante.getInstance().getConfig().getString("Mutante") + "!");
             return true;
         }
 
         Player player = Bukkit.getPlayer(args[0]);
         new XPlayer().setMutant(player);
-        sender.sendMessage(MessageUtil.prefix + "Você setou o jogador " + XMutante.getInstance().getConfig().getString("Mutant") + " como mutante");
+        sender.sendMessage(MessageUtil.prefix + "Você setou o jogador " + XMutante.getInstance().getConfig().getString("Mutante") + " como mutante");
         return false;
     }
 }
