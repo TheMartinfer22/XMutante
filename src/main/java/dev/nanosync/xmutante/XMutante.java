@@ -5,7 +5,8 @@ import dev.nanosync.xmutante.command.XMutanteAdminCommand;
 import dev.nanosync.xmutante.events.XMenuCancelEvent;
 import dev.nanosync.xmutante.custom.XMenuGlowEnchant;
 import dev.nanosync.xmutante.events.XMenuPowersEvent;
-import dev.nanosync.xmutante.mutant.XPlayer;
+import dev.nanosync.xmutante.entities.XPlayer;
+import dev.nanosync.xmutante.schendules.XPlayerMutantScheduler;
 import org.bukkit.Bukkit;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.plugin.PluginManager;
@@ -19,6 +20,7 @@ public final class XMutante extends JavaPlugin {
     public void onEnable() {
         registerGlow();
         saveDefaultConfig();
+
         getCommand("mutante").setExecutor(new XMutantUserCommand());
         getCommand("setmutante").setExecutor(new XMutanteAdminCommand());
 
@@ -29,6 +31,7 @@ public final class XMutante extends JavaPlugin {
 
         pm.registerEvents(new XPlayer(), this);
 
+        new XPlayerMutantScheduler(1200);
     }
 
     @Override

@@ -1,7 +1,7 @@
 package dev.nanosync.xmutante.command;
 
 import dev.nanosync.xmutante.XMutante;
-import dev.nanosync.xmutante.mutant.XMenu;
+import dev.nanosync.xmutante.entities.XMenu;
 import dev.nanosync.xmutante.util.MessageUtil;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

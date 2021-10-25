@@ -1,7 +1,7 @@
 package dev.nanosync.xmutante.command;
 
 import dev.nanosync.xmutante.XMutante;
-import dev.nanosync.xmutante.mutant.XPlayer;
+import dev.nanosync.xmutante.entities.XPlayer;
 import dev.nanosync.xmutante.util.MessageUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

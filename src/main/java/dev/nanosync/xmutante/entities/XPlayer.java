@@ -1,4 +1,4 @@
-package dev.nanosync.xmutante.mutant;
+package dev.nanosync.xmutante.entities;
 
 import dev.nanosync.xmutante.XMutante;
 import dev.nanosync.xmutante.util.MessageUtil;

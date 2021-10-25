@@ -1,8 +1,8 @@
 package dev.nanosync.xmutante.events;
 
 import dev.nanosync.xmutante.custom.XMenuGlowEnchant;
-import dev.nanosync.xmutante.mutant.XMenu;
-import dev.nanosync.xmutante.mutant.XPowers;
+import dev.nanosync.xmutante.entities.XMenu;
+import dev.nanosync.xmutante.entities.XPowers;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

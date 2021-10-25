@@ -1,4 +1,4 @@
-package dev.nanosync.xmutante.mutant;
+package dev.nanosync.xmutante.entities;
 
 import org.bukkit.entity.Player;
 
