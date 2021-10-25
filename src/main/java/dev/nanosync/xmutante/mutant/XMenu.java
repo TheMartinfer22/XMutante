@@ -21,7 +21,7 @@ public class XMenu  {
     public Inventory getInventory(){
         Inventory inventory = Bukkit.createInventory(player, 9, "Menu do Mutante");
         inventory.addItem(getHighWalkSpeedItemStack());
-        inventory.addItem(getColisorItemStack());
+//        inventory.addItem(getColisorItemStack());
         return inventory;
     }
 
@@ -41,12 +41,12 @@ public class XMenu  {
         return itemStack;
     }
 
-    public ItemStack getColisorItemStack(){
-        ItemStack itemStack = new ItemStack(Material.EYE_OF_ENDER);
-        ItemMeta itemMeta = itemStack.getItemMeta();
-        itemMeta.setDisplayName("Colisor de Objetos");
-        itemStack.setItemMeta(itemMeta);
-        return itemStack;
-    }
+//    public ItemStack getColisorItemStack(){
+//        ItemStack itemStack = new ItemStack(Material.EYE_OF_ENDER);
+//        ItemMeta itemMeta = itemStack.getItemMeta();
+//        itemMeta.setDisplayName("Colisor de Objetos");
+//        itemStack.setItemMeta(itemMeta);
+//        return itemStack;
+//    }
 
 }
