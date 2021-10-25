@@ -3,6 +3,7 @@ package dev.nanosync.xmutante.events;
 import dev.nanosync.xmutante.custom.XMenuGlowEnchant;
 import dev.nanosync.xmutante.mutant.XMenu;
 import dev.nanosync.xmutante.mutant.XPowers;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -12,7 +13,6 @@ public class XMenuPowersEvent implements Listener {
 
     XMenuGlowEnchant xMenuGlowEnchant = new XMenuGlowEnchant();
     XMenu xMenu = new XMenu();
-//    XPowers xPowers = new XPowers();
 
     private boolean isEnabledHighSpeed = false;
     private boolean isEnabledColisor = false;
@@ -32,24 +32,18 @@ public class XMenuPowersEvent implements Listener {
 
     @EventHandler
     public void clickPowers(InventoryClickEvent event){
+        XPowers xPowers = new XPowers((Player) event.getView().getPlayer());
         if (!event.getInventory().getName().equals(xMenu.getInventoryName())) return;
         switch (event.getSlot()) {
             case 0:
                 if (isEnabledHighSpeed) {
                     event.getView().getPlayer().sendMessage("V Desabilitado");
+                    xPowers.toggleHighSpeed(false);
                     isEnabledHighSpeed = false;
                 } else {
                     event.getView().getPlayer().sendMessage("V Habilitado");
+                    xPowers.toggleHighSpeed(true);
                     isEnabledHighSpeed = true;
-                }
-                break;
-            case 1:
-                if (isEnabledColisor) {
-                    event.getView().getPlayer().sendMessage("C Desabilitado");
-                    isEnabledColisor = false;
-                } else {
-                    event.getView().getPlayer().sendMessage("C Habilitado");
-                    isEnabledColisor = true;
                 }
                 break;
         }
