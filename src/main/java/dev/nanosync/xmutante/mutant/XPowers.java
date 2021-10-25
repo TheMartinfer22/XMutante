@@ -8,21 +8,18 @@ public class XPowers {
         this.player = player;
     }
 
-    public void enableColisor(){
-        player.setCollidable(false);
+    public void toggleHighSpeed(boolean enable){
+        if (enable){
+            player.setWalkSpeed(1);
+            player.setFlySpeed(1);
+        } else {
+            player.setWalkSpeed(0.2f);
+            player.setFlySpeed(0.1f);
+        }
+
     }
 
-    public void disableColisor(){
-        player.setCollidable(true);
-    }
-
-    public void enableHighSpeed(){
-        player.setWalkSpeed(2);
-        player.setFlySpeed(2);
-    }
-
-    public void disableHighSpeed(){
-        player.setWalkSpeed(0.1f);
-        player.setFlySpeed(0.2f);
+    public void disableAll(){
+        toggleHighSpeed(false);
     }
 }
