@@ -1,6 +1,7 @@
 package dev.nanosync.xmutante.entities;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -19,7 +20,7 @@ public class XMenu  {
     }
 
     public Inventory getInventory(){
-        Inventory inventory = Bukkit.createInventory(player, 9, "Menu do Mutante");
+        Inventory inventory = Bukkit.createInventory(player, 9, ChatColor.YELLOW + "Menu do Mutante");
         inventory.addItem(getHighWalkSpeedItemStack());
 //        inventory.addItem(getColisorItemStack());
         return inventory;

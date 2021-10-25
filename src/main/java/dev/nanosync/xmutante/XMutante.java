@@ -31,7 +31,7 @@ public final class XMutante extends JavaPlugin {
 
         pm.registerEvents(new XPlayer(), this);
 
-        new XPlayerMutantScheduler(1200);
+        new XPlayerMutantScheduler();
     }
 
     @Override

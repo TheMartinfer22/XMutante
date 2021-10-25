@@ -3,6 +3,8 @@ package dev.nanosync.xmutante.events;
 import dev.nanosync.xmutante.custom.XMenuGlowEnchant;
 import dev.nanosync.xmutante.entities.XMenu;
 import dev.nanosync.xmutante.entities.XPowers;
+import dev.nanosync.xmutante.util.MessageUtil;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -37,11 +39,11 @@ public class XMenuPowersEvent implements Listener {
         switch (event.getSlot()) {
             case 0:
                 if (isEnabledHighSpeed) {
-                    event.getView().getPlayer().sendMessage("V Desabilitado");
+                    event.getView().getPlayer().sendMessage(MessageUtil.prefix + ChatColor.RED + "Você desabilitou a velocidade rápida.");
                     xPowers.toggleHighSpeed(false);
                     isEnabledHighSpeed = false;
                 } else {
-                    event.getView().getPlayer().sendMessage("V Habilitado");
+                    event.getView().getPlayer().sendMessage(MessageUtil.prefix + ChatColor.GREEN + "Você habilitou a velocidade rápida.");
                     xPowers.toggleHighSpeed(true);
                     isEnabledHighSpeed = true;
                 }

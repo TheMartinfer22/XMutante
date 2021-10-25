@@ -3,6 +3,7 @@ package dev.nanosync.xmutante.entities;
 import dev.nanosync.xmutante.XMutante;
 import dev.nanosync.xmutante.util.MessageUtil;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Instrument;
 import org.bukkit.Note;
 import org.bukkit.entity.Player;
@@ -34,13 +35,15 @@ public class XPlayer implements Listener {
 
     public void randomMutant(){
         List<Player> players = new ArrayList<>(Bukkit.getOnlinePlayers());
+        if (players.size() == 0) return;
+
         Player player = players.get(new Random().nextInt(Bukkit.getOnlinePlayers().size()));
         setMutant(player);
         players.forEach(jogador -> {
-            jogador.sendTitle(MessageUtil.prefix, "O jogador " + player.getName() + " agora é mutante!", 1, 15, 1);
+            jogador.sendTitle(MessageUtil.prefix, ChatColor.YELLOW + "O jogador " + player.getName() + " agora é mutante!", 1, 30, 1);
             jogador.playNote(player.getPlayer().getLocation(), Instrument.BELL, Note.flat(1, Note.Tone.E));
         });
-        player.sendMessage(MessageUtil.prefix + "Veja seus comandos em /mutante!");
+        player.sendMessage(MessageUtil.prefix + ChatColor.GREEN + "Veja seus comandos em /mutante!");
     }
 
     public void clearMutant(){
