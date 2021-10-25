@@ -1,0 +1,7 @@
+name: XMutante
+version: '${project.version}'
+main: dev.nanosync.xmutante.XMutante
+authors: [ Martinfer22 ]
+description: Um plugin para transformar aleartoriamente um jogador em um mutante
+commands:
+  mutant:
